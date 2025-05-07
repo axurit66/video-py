@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  moviepy-api:
+    build: .
+    container_name: moviepy-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - moviepy_output:/app/output
+    restart: unless-stopped
+
+volumes:
+  moviepy_output:
